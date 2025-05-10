@@ -1,3 +1,25 @@
 { 
-    "liveServer.settings.ignoreFiles": ["Backend/**"] 
+    "liveServer.settings.ignoreFiles": [
+        "Backend/**"
+    ],
+    "cSpell.words": [
+        "buttonactif",
+        "buttonfilter",
+        "buttonfiltertous",
+        "buttonsfilter",
+        "buttontous",
+        "createfigure",
+        "datawork",
+        "ecoutebuttonfiltre",
+        "filteredwork",
+        "filteredworks",
+        "filterwork",
+        "filtrework",
+        "getcategory",
+        "getwork",
+        "idbutton",
+        "idselect",
+        "idselectnumber",
+        "workselement"
+    ]
 }
