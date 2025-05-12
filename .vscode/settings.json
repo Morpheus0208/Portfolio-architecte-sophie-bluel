@@ -3,6 +3,7 @@
         "Backend/**"
     ],
     "cSpell.words": [
+        "Bluel",
         "buttonactif",
         "buttonfilter",
         "buttonfiltertous",
@@ -10,6 +11,7 @@
         "buttontous",
         "createfigure",
         "datawork",
+        "DPLG",
         "ecoutebuttonfiltre",
         "filteredwork",
         "filteredworks",
