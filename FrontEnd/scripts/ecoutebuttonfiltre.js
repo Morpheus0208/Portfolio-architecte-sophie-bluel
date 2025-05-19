@@ -7,6 +7,7 @@ export function ecouteButtonFiltre(works,categories) {
   for (let i=0;i<categories.length+1;i++){
     buttons[i].addEventListener("click", (event) => {
       const idselect=event.target.id;
+      console.log (typeof (idselect));
       buttonActif(buttons,idselect);
       const filteredworks=filtreWork(works,idselect);
       /*  ajout des travaux filtrés dans le DOM */

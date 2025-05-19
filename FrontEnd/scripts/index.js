@@ -18,3 +18,4 @@ buttonTous(categories);
 buttonsFilter(categories);
 /* écoute des boutons filtres*/ 
 ecouteButtonFiltre(works, categories);
+const token = localStorage.getItem("token");

@@ -12,7 +12,9 @@
         "createfigure",
         "datawork",
         "DPLG",
+        "ecoute",
         "ecoutebuttonfiltre",
+        "executez",
         "filteredwork",
         "filteredworks",
         "filterwork",
@@ -22,6 +24,8 @@
         "idbutton",
         "idselect",
         "idselectnumber",
+        "logindata",
+        "phie",
         "workselement"
     ]
 }
