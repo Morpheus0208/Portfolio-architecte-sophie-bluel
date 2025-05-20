@@ -294,11 +294,88 @@ footer nav ul {
 }
 #modalContent {
 	position: absolute;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	border-radius: 10px;
 	background-color: white;
 	width: 50%;
-	height: 50%;
+	height: 60%;
+}
+#closeModal {
+	/** position:absolute;
+	top: 10px;
+	right: 10px;*/
+	display: flex;
+	justify-content: flex-end;
+	margin-left: auto;
+	margin-top: 10px;
+	margin-right: 10px;
+	background-color: white;
+	color: black;
+	width: 24px;
+	height: 24px;
+	border: 0;
 }	
+#modalContent h2 {
+	text-align: center;
+	margin: 1em;
+	font-family: "work sans";
+	font-size: 1.5em;
+	font-weight: 400;
+	color: black;
+}	
+#separateur{
+	height : 1px;
+	background-color: #B3B3B3;
+	width: 40%;
+	margin: auto;
+}
+#addProject {
+	border: none;
+	box-shadow: none;
+	font-family: 'Syne';
+	font-weight: 700;
+	color: white;
+	background-color: #1D6154;
+	margin : 2em auto ;
+	width: 180px;
+	text-align: center;
+	border-radius: 60px ;
+}
+#modalGallery {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 10px;
+	width: 50%;
+}	
+#modalGallery figure {
+	display: flex;
+	position: relative;
+	justify-content: center;
+	flex-direction: column;
+	align-items: flex-start;
+}	
+#modalGallery img {
+	display: block;
+	width: 76px;
+	height: 102px;
+}	
+#modalGallery i {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	width: 17px;
+	height: 17px;
+	padding: 2px;
+	text-align: center;
+	color: white;
+	background-color: black;	
+}

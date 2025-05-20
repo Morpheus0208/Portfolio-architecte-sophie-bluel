@@ -18,10 +18,39 @@ buttonsFilter(categories);
 ecouteButtonFiltre(works, categories);
 /** affichage de la page en mode edition */
 const token = localStorage.getItem("token");   
-console.log("le token est :",token); 
-console.log(token==="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc0NzY3MjY0MCwiZXhwIjoxNzQ3NzU5MDQwfQ.kbFIasARJC3rWeYph7d5wuRlQkGMsl8kdwC0qQq-Gnw");
 if (token==="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc0NzY3MjY0MCwiZXhwIjoxNzQ3NzU5MDQwfQ.kbFIasARJC3rWeYph7d5wuRlQkGMsl8kdwC0qQq-Gnw"){
-   /** creation du bandeau de modification */
+    afficherBandeauModification();
+    supprimerFiltres();   
+    afficherButtonModifier();
+     /** ecoute du bouton modifier */
+    const buttonModifier = document.querySelector(".modifier");
+    buttonModifier.addEventListener("click", () => {
+        afficherModale();
+        afficherModalGallery(works);
+        /** fermer la modale avec la croix*/
+        const closeModale = document.querySelector("#closeModal");
+        closeModale.addEventListener("click", () => {
+            modale.style.display = "none";
+        });
+        /** fermer la modale en cliquant l'overlay*/
+        const modale = document.querySelector("#modal");
+        window.addEventListener("click", (event) => {
+            if (event.target === modale) {
+                modale.style.display = "none";
+            }
+        });
+        /** ecoute des icones corbeille */
+        const deleteIcons = document.querySelectorAll(".fa-trash-can");
+        deleteIcons.forEach((icon) => {
+            icon.addEventListener("click", (event) => {
+                const figureElement = event.target.closest("figure");
+                figureElement.remove();
+            });
+        });
+    });   
+}; 
+/** creation du bandeau de modification */
+function afficherBandeauModification() {
     console.log("creation du mode edition");
     const modeEdition = document.querySelector("body");
     const editionDiv =document.createElement("div");
@@ -37,16 +66,47 @@ if (token==="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc0Nz
     contentEditionDiv.appendChild(editionText);
     editionDiv.appendChild(contentEditionDiv);
     modeEdition.prepend(editionDiv);
-    /** supression des boutons filtres */
+}
+
+/** supression des boutons filtres */
+function supprimerFiltres() {
     const buttonFilter = document.querySelector(".categories");
     buttonFilter.remove();
-    /** creation du bouton modifier */
+}
+
+/** creation du bouton modifier */
+function afficherButtonModifier() {
     const portfolio = document.querySelector(".titreProjets");
     const buttonModifier = document.createElement("button");
     buttonModifier.textContent="modifier";
     buttonModifier.classList.add("modifier");
     const IconeBoutonModifier = document.createElement("i");
-    IconeBoutonModifier.classList.add("fa-solid", "fa-pen-to-square");
+    IconeBoutonModifier.classList.add("fa-regular", "fa-pen-to-square");
     buttonModifier.prepend(IconeBoutonModifier);
-    portfolio.appendChild(buttonModifier);   
-};
+    portfolio.appendChild(buttonModifier);
+}
+
+ /** affichage de la modale */
+function afficherModale() {
+    const modale=document.getElementById("modal");
+    modale.style.display = "block";
+}
+
+/** afficher la gallery dans la modale */
+function afficherModalGallery(workselement) {
+    document.querySelector("#modalGallery").innerHTML = "";
+    const modalGallery = document.querySelector("#modalGallery");
+    for (const work of workselement) {
+        const figureElement = document.createElement("figure");
+        const imageElement = document.createElement("img");
+        const iconeFigure = document.createElement("i");
+        iconeFigure.classList.add("fa-regular", "fa-trash-can");
+        /* creation des figures des travaux */
+        imageElement.src = work.imageUrl;
+        imageElement.alt = work.title;
+        /* affichage des figures dans le DOM */
+        figureElement.appendChild(imageElement);
+        figureElement.appendChild(iconeFigure);
+        modalGallery.appendChild(figureElement);
+    }
+}
