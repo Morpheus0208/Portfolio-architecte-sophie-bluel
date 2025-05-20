@@ -54,7 +54,7 @@ async function getToken(email, password) {
       loginForm.removeChild(existingErrorMessage);
     }
     const errorMessage = document.createElement("p");
-    errorMessage.textContent = "Identifiant ou mot de passe incorrect";
+    errorMessage.textContent = "Erreur dans l’identifiant ou le mot de passe";
     errorMessage.style.color = "red";
     errorMessage.style.textAlign = "center";
     errorMessage.style.padding = "10px";

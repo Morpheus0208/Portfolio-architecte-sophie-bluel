@@ -10,6 +10,7 @@
 	<meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
 	<script type="module" src="./scripts/index.js" defer></script>
+	<script src="https://kit.fontawesome.com/006c0305fb.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <header>
@@ -36,7 +37,9 @@
 		</article>
 	</section>
 	<section id="portfolio">
-		<h2>Mes Projets</h2>
+		<div class="titreProjets">
+			<h2>Mes Projets</h2>
+		</div>
 		<div class="categories">
 		</div>
 		<div class="gallery">
@@ -55,6 +58,20 @@
 			<input type="submit" value="Envoyer">
 		</form>
 	</section>
+	<div id="modal">
+		<div id="modalContent">
+			<button id="closeModal">X</button>
+			<h2>Galerie photo</h2>
+			<figure>
+				<img src="" alt="">
+			</figure>
+			<article>
+				<h2>Nom du projet</h2>
+				<p>Description du projet.</p>
+				<p>Autres informations.</p>
+			</article>
+		</div>
+	</div>
 </main>
 
 <footer>

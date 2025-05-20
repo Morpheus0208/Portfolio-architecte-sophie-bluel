@@ -53,6 +53,68 @@ body {
 	font-family: 'Work Sans' ;
 	font-size: 14px;
 }
+.edition {
+	background-color: black;
+	height : 59px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	font-family: 'work sans';
+	font-size: 1em;
+	font-weight: 400;
+}
+.content-edition {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 15%;
+	margin: auto;
+}	
+.titreProjets {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: flex-start;
+	color: white;
+	font-family: 'Work Sans';
+	font-size: 1em;
+	font-weight: 400;
+	padding: 0%;
+	width: 100%;
+}
+.modifier {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items :flex-start;
+	background-color: white;
+	color: black;
+	font-family: 'Work Sans';
+	font-size: 1em;
+	margin: 1em;
+	font-weight: 400;
+	border: 0;
+	width: 9%;
+	height: 18px;
+	color: black;
+	background-color: white;
+	padding: 0% 10px;
+	font-family: 'Work Sans';
+	font-size: 1em;
+	font-weight: 400;
+}
+.modifier:hover {
+	background-color: white;
+	color: #B1663C;
+}
+.content-edition img {
+	display: flex;
+	width: 20px;
+	height: 20px;
+	margin-right: 10px;
+}	
 header {
 	display: flex;
 	justify-content: space-between;
@@ -159,6 +221,7 @@ nav a {
 	border-radius: 60px ;
 	cursor: pointer;
 }
+
 .gallery {
 	width: 100%;
 	display: grid;
@@ -219,4 +282,23 @@ footer nav ul {
 	justify-content: flex-end;
 	margin: 2em
 }
-
+#modal {
+	display: none;
+	position: fixed;
+	z-index: 1000;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+#modalContent {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 10px;
+	background-color: white;
+	width: 50%;
+	height: 50%;
+}	
