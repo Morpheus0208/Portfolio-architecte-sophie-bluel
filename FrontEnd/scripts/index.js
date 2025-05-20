@@ -39,12 +39,17 @@ if (token==="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc0Nz
                 modale.style.display = "none";
             }
         });
-        /** ecoute des icones corbeille */
+        /** ecoute des icones corbeille et supression du projet */
         const deleteIcons = document.querySelectorAll(".fa-trash-can");
         deleteIcons.forEach((icon) => {
             icon.addEventListener("click", (event) => {
-                const figureElement = event.target.closest("figure");
-                figureElement.remove();
+                console.log ("event.target", event.target);
+                console.log("classe event"+event.target.parentElement.classList[0])
+                const figureElementsToRemove = document.querySelectorAll("."+event.target.parentElement.classList[0]); 
+                figureElementsToRemove.forEach((figureElement) => {
+                    figureElement.remove();
+                });
+
             });
         });
     });   
@@ -100,6 +105,7 @@ function afficherModalGallery(workselement) {
         const figureElement = document.createElement("figure");
         const imageElement = document.createElement("img");
         const iconeFigure = document.createElement("i");
+        figureElement.classList.add("id"+work.id);
         iconeFigure.classList.add("fa-regular", "fa-trash-can");
         /* creation des figures des travaux */
         imageElement.src = work.imageUrl;

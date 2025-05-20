@@ -9,6 +9,7 @@ export function createFigure(workselement) {
     const figcaptionElement = document.createElement("figcaption");
     
     /* creation des figures des travaux */
+    figureElement.classList.add("id"+work.id);
     imageElement.src = work.imageUrl;
     imageElement.alt = work.title;
     figcaptionElement.textContent = work.title;
