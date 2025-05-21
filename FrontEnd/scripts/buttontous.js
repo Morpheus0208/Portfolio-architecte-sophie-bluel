@@ -4,7 +4,7 @@ export function buttonTous(categories){
   const lastid = categories[categories.length-1].id;
   buttonfiltertous.setAttribute("id", lastid + 1);
   buttonfiltertous.textContent = "Tous";
-  buttonfiltertous.classList.add("inactive");
+  buttonfiltertous.classList.add("active");
   document.querySelector(".categories").appendChild(buttonfiltertous);
 }
   
