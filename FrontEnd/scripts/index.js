@@ -36,7 +36,7 @@ if (token){
         afficherModale();
         afficherModalGallery(works);
         /** fermer la modale avec la croix*/
-        const closeModale = document.querySelector("#closeModal");
+        const closeModale = document.querySelector(".closeModal");
         closeModale.addEventListener("click", (event) => {
             event.preventDefault();
             modale.style.display = "none";
@@ -44,7 +44,6 @@ if (token){
         /** fermer la modale en cliquant l'overlay*/
         const modale = document.querySelector("#modal");
         window.addEventListener("click", (event) => {
-
             if (event.target === modale) {
                 modale.style.display = "none";
             }
@@ -60,12 +59,28 @@ if (token){
         /** ecoute du bouton ajouter une photo */
         const buttonAddPhoto = document.querySelector("#addProject");
         buttonAddPhoto.addEventListener("click", (event) => {
+            /* Affichage de la modale d'ajout de projet */
             event.preventDefault();
             effacerModale();
-            afficherModaleAjout();
-            const form = document.querySelector("#form");
+            afficherModaleAddProject();
+            /*  ecoute des boutons de fermeture de la modale d'ajout de projet*/
+            const addProjectModale = document.querySelector("#addProjectModal");
+            const closeAddProject = document.querySelector(".closeModal");
+            closeAddProject.addEventListener("click", (event) => {
+                event.preventDefault();
+                addProjectModale.classList.add('hidden');
+            });
+            /** ecoute de l'overlay pour fermer la modale d'ajout de projet*/
+            window.addEventListener("click", (event) => {
+                if (event.target === closeModalAddProject) {
+                    const addProjectModale = document.querySelector("#addProjectModal")
+                    addProjectModale.classList.add('hidden');
+                }
+            });
         });
     });
+    /** ecoute du bouton fermeture modale */
+    
     }; 
 /** creation du bandeau de modification et remplacement login par logout */
 function afficherBandeauModification() {
@@ -115,9 +130,20 @@ function afficherButtonModifier() {
  /** affichage de la modale */
 function afficherModale() {
     const modale=document.getElementById("modal");
-    modale.style.display = "block";
+    modale.classList.remove('hidden');
 }
-
+function effacerModale() {
+    const modale= document.getElementById("modal");
+    modale.classList.add('hidden');
+}
+function afficherModaleAddProject() {
+    const addProjectModale=document.getElementById("addProjectModal");
+    addProjectModale.classList.remove('hidden');
+}
+function effacerModaleAddProject() {
+    const addProjectModale= document.getElementById("addProjectModal");
+    addProjectModale.classList.add('hidden');
+}
 /** afficher la gallery dans la modale */
 function afficherModalGallery(workselement) {
     document.querySelector("#modalGallery").innerHTML = "";
@@ -159,33 +185,47 @@ async function deleteProject(event,token) {
         console.error("Erreur lors de la récupération des données :", error);
     }
 }
+    /*  const modalContent = document.querySelector("#addProjectModal");
+    const divAjoutTitre = document.createElement("div");
+    divAjoutTitre.classList.add("ajout-titre");
+    const inputAjoutTitre = document.createElement("input");
+    inputAjoutTitre.type="text";
+    inputAjoutTitre.name="title";
+    inputAjoutTitre.id="title";
+    inputAjoutTitre.placeholder="Titre";
+    const labelInputAjoutTitre = document.createElement("label");
+    labelInputAjoutTitre.setAttribute("for", "title");
+    labelInputAjoutTitre.textContent="Titre";
+    divAjoutTitre.appendChild(inputAjoutTitre);
+    divAjoutTitre.appendChild(labelInputAjoutTitre);
+    modalContent.appendChild(divAjoutTitre);
 
-function effacerModale() {
-    const modalContent = document.querySelector("#modalContent");
-    modalContent.innerHTML = "";
-};
-function afficherModaleAjout() {
-    const modalContent = document.querySelector("#modalContent");
-    const titreAjoutPhoto = document.createElement("h2");
-    titreAjoutPhoto.textContent="Ajout photo";
-    modalContent.appendChild(titreAjoutPhoto);
+    const divAjoutCategorie = document.createElement("div");
+    divAjoutCategorie.classList.add("ajout-categorie");
+    const selectCategorie = document.createElement("select");
+    selectCategorie.name="category";
+    selectCategorie.id="category";
+    selectCategorie.required=true;
+    const labelInputSelectCategorie = document.createElement("label");
+    labelInputSelectCategorie.setAttribute("for", "category");
+    labelInputSelectCategorie.textContent="Catégorie";
+    
+    for (const category of categories) {
+        const option = document.createElement("option");
+        option.value=category.id;
+        option.textContent=category.name;
+        selectCategorie.appendChild(option);
+    }
+    
+    divAjoutCategorie.appendChild(selectCategorie);
+    divAjoutCategorie.appendChild(labelInputSelectCategorie);
+    
+    modalContent.appendChild(divAjoutCategorie);
 
-    const form = document.createElement("form");
-    form.id="form";
-    form.setAttribute("action", "#");
-    form.setAttribute("method", "post");
-    const divAjoutPhoto = document.createElement("div");
-    divAjoutPhoto.classList.add("ajout-photo");
-    const inputAjoutPhoto = document.createElement("input");
-    inputAjoutPhoto.type="file";
-    inputAjoutPhoto.name="image";
-    inputAjoutPhoto.id="image";
-    inputAjoutPhoto.accept=".jpg, .jpeg, .png";
-    const labelInputAjoutPhoto = document.createElement("label");
-    labelInputAjoutPhoto.setAttribute("for", "image");
-    labelInputAjoutPhoto.textContent="+ Ajouter une photo";
-    divAjoutPhoto.appendChild(inputAjoutPhoto);
-    divAjoutPhoto.appendChild(labelInputAjoutPhoto);
-    form.appendChild(divAjoutPhoto);
-    modalContent.appendChild(form);
-}
+    const buttonValider = document.createElement("button");
+    buttonValider.type="submit";
+    buttonValider.textContent="Valider";
+    buttonValider.id="valider";
+    
+    modalContent.appendChild(buttonValider);*/
+
