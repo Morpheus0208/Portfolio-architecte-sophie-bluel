@@ -303,21 +303,8 @@ footer nav ul {
 	height: 100%;
 	background-color: rgba(0, 0, 0, 0.5);
 }
-#addProjectContent {
-	position: absolute;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	border-radius: 10px;
-	background-color: white;
-	width: 50%;
-	height: 60%;
-}
-#modalContent {
+
+.modalContent {
 	position: absolute;
 	display: flex;
 	flex-direction: column;
@@ -332,12 +319,9 @@ footer nav ul {
 	height: 60%;
 }
 .closeModal {
-	/** position:absolute;
+	position: absolute;
 	top: 10px;
-	right: 10px;*/
-	display: flex;
-	justify-content: flex-end;
-	margin-left: auto;
+	right: 10px;
 	margin-top: 10px;
 	margin-right: 10px;
 	background-color: white;
@@ -346,28 +330,121 @@ footer nav ul {
 	height: 24px;
 	border: 0;
 }	
-#BackToGallery {
+.backToGallery {
+	position: absolute;
 	top: 10px;
 	left: 10px;
+	margin-top: 10px;
+	margin-right: 10px;
 	background-color: white;
 	color: black;
 	width: 24px;
 	height: 24px;
 	border: 0;
-}	
+}
+#addProjectModal h2 {
+	text-align: center;
+	margin: 1em;
+	font-family: "work sans";
+	font-size: 1.6em;
+	font-weight: 400;
+	color: black;
+}
 #modalContent h2 {
 	text-align: center;
 	margin: 1em;
 	font-family: "work sans";
-	font-size: 1.5em;
+	font-size: 1.6em;
 	font-weight: 400;
 	color: black;
 }	
-#separateur{
+
+.separateur{
 	height : 1px;
 	background-color: #B3B3B3;
 	width: 40%;
-	margin: auto;
+	margin: 1.5em auto;
+}
+.imageLabel {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 420px;
+	height: 160px;
+	background-color: #E8F1F6;
+	position: relative;
+	margin : 1em auto;
+}
+.imageLabel i {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding-top: 0.3em;
+	width: 100%;
+	height: 100%;
+	color: #B9C5CC;
+	text-align: center;
+	line-height: 70px;
+	font-size: 5em;
+}
+#boutonAddProject {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	border: none;
+	box-shadow: none;
+	font-family: 'work sans';
+	font-weight: 500;
+	color: #306685;
+	background-color: #CBD6DC;
+	margin : 1em auto ;
+	padding: 10px 0;
+	width: 173px;
+	text-align: center;
+	border-radius: 50px ;
+}
+#formatImage {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	margin-bottom: 2em;
+	font-size: 0.6em;
+	font-family: 'work sans';
+	font-weight: 400;
+	color: #444444;
+}
+input[type="text"], select {
+    display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+    width: 100%;
+	font-family: "work sans";
+	font-size: 0.9em;
+    border: none;
+	color: #3D3D3D;
+	height: 50px;
+	margin: 1em auto;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+}
+button[type="submit"] {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 237px;
+	margin : auto;
+    background: #A7A7A7;
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 60px;
+    cursor: pointer;
 }
 #addProject {
 	border: none;

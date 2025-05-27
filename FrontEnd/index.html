@@ -59,31 +59,47 @@
 		</form>
 	</section>
 	<div id="modal" class="hidden">
-		<div id="modalContent">
-			<button class="closeModal">X</button>
+		<div id="modalContent" class="modalContent">
+			<button class="closeModal"><i class="fa-solid fa-xmark"></i></button>
 			<h2>Galerie photo</h2>
 			<div id="modalGallery">
 			</div>
-			<div id="separateur">
+			<div class="separateur">
 			</div>
 			<button id="addProject">Ajouter une photo</button>
 		</div>
 	</div>
-	<div id="addProjectModal"	 class="hidden">
-		<div id="addProjectContent">
-			<button id="backToGallery">&#8592</button>
-			<button id="closeModalAddProject">X</button>
+	<div id="addProjectModal" class="hidden">
+        <div id="addProjectmodalContent" class="modalContent">
+			<button id="backToGallery"class="backToGallery"><i class="fa-solid fa-arrow-left"></i></button>
+			<button id="closeModalAddProject" class="closeModal"><i class="fa-solid fa-xmark"></i></button>
 			<h2>Ajout photo</h2>
-			<form id="projectForm">
-				<label for="projectImage">Ajouter photo</label>
-				<input type="file" name="projectImage" id="projectImage" accept="image/*" required>
-				<label for="projectName">Titre</label>
-				<input type="text" name="projectName" id="projectName" required>
-				<div id="separateur">
+			<form id="addProjectForm" enctype="multipart/form-data">
+				<!-- partie ajout photo -->
+				<div class="photoUpload">
+					<label for="imageUpload" class="imageLabel">
+						<i class="fa-regular fa-image"></i>
+						<p id="boutonAddProject">+ Ajouter photo</p>
+						<p id="formatImage">jpg, png : 4mo max</p>
+					</label>
+					<input type="file" id="imageUpload" name="image" accept="image/png, image/jpeg" hidden>
 				</div>
-				<label for="projectCategory">Categorie</label>
-				<input type="text" name="projectCategory" id="projectCategory" required>
-				<input type="submit" value="Valider">
+				<!-- partie titre -->
+				<label for="title">Titre</label>
+				<input type="text" name="title"  required>
+				<!-- partie catégorie -->
+				<label for="category">Catégorie</label>
+				<select name="category" required>
+					<option value=""></option>
+					<option value="1">Objets</option>
+					<option value="2">Appartements</option>
+					<option value="3">Hôtels & restaurants</option>
+				</select>
+				<!-- partie séparateur -->
+				<div class="separateur">
+				</div>
+				<!-- partie validation ajout photo -->
+				<button type="submit">Valider</button>
 			</form>
 		</div>
 	</div>
