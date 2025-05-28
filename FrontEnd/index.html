@@ -81,25 +81,22 @@
 						<i class="fa-regular fa-image"></i>
 						<p id="boutonAddProject">+ Ajouter photo</p>
 						<p id="formatImage">jpg, png : 4mo max</p>
+						<input type="file" id="imageUpload" name="image" accept="image/png, image/jpeg" hidden>
 					</label>
-					<input type="file" id="imageUpload" name="image" accept="image/png, image/jpeg" hidden>
 				</div>
 				<!-- partie titre -->
 				<label for="title">Titre</label>
-				<input type="text" name="title"  required>
+				<input id="addProjectTitre"type="text" name="title"  required>
 				<!-- partie catégorie -->
 				<label for="category">Catégorie</label>
-				<select name="category" required>
+				<select id="selectCategory" name="category" required>
 					<option value=""></option>
-					<option value="1">Objets</option>
-					<option value="2">Appartements</option>
-					<option value="3">Hôtels & restaurants</option>
 				</select>
 				<!-- partie séparateur -->
 				<div class="separateur">
 				</div>
 				<!-- partie validation ajout photo -->
-				<button type="submit">Valider</button>
+				<button id="addProjectValider" class ="projetKo"type="submit" disabled>Valider</button>
 			</form>
 		</div>
 	</div>

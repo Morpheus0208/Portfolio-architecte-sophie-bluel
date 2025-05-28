@@ -9,6 +9,7 @@
         "buttonfiltertous",
         "buttonsfilter",
         "buttontous",
+        "categorie",
         "createfigure",
         "datawork",
         "DPLG",
@@ -21,11 +22,17 @@
         "filtrework",
         "getcategory",
         "getwork",
+        "icone",
+        "icones",
         "idbutton",
         "idselect",
         "idselectnumber",
         "logindata",
         "phie",
-        "workselement"
+        "Projectmodal",
+        "reinitialiser",
+        "separateur",
+        "workselement",
+        "xmark"
     ]
 }

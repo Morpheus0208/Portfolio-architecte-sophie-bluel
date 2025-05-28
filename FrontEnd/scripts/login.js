@@ -25,7 +25,7 @@ async function getToken(email, password) {
 }
 
 /** ecoute du bouton submit du formulaire  */
- function ecouteButtonLogin(){
+function ecouteButtonLogin(){
   const button = document.querySelector("#submit");
   button.addEventListener("click", async (event) => {
   event.preventDefault();

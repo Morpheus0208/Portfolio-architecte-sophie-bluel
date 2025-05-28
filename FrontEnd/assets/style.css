@@ -433,18 +433,33 @@ input[type="text"], select {
 	margin: 1em auto;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
-button[type="submit"] {
+#addProjectValider {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	width: 237px;
 	margin : auto;
-    background: #A7A7A7;
-    color: white;
     border: none;
     padding: 0.75rem 2rem;
     border-radius: 60px;
     cursor: pointer;
+}
+.projetOk {
+    background: #1D6154;
+    color: white;
+}
+.projetKo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 237px;
+	margin : auto;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 60px;
+    cursor: pointer;
+    background: #A7A7A7;
+    color: white;
 }
 #addProject {
 	border: none;
@@ -489,4 +504,11 @@ button[type="submit"] {
 	text-align: center;
 	color: white;
 	background-color: black;	
+}
+.imageMiniature {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
 }
