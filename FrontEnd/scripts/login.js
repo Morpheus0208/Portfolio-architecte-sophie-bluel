@@ -15,6 +15,9 @@ async function getToken(email, password) {
           password: password
         })
       });
+      if (!response.ok) {
+        throw new Error("Erreur lors de la récupération du token");
+      }
       const userData = await response.json();
       const token= userData.token;
       return token;

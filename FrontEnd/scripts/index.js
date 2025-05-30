@@ -119,13 +119,16 @@ if (token){
                 formData.append("image", imageFile);
                 formData.append("category", categoryId);
                 try {
-                    await fetch("http://localhost:5678/api/works", {
+                    const response = await fetch("http://localhost:5678/api/works", {
                         method: "POST",
                         headers: {
                             "Authorization": `Bearer ${token}`,
                         },
                         body: formData
                     });
+                    if (!response.ok) {
+                        throw new Error("Erreur lors de l'ajout du projet");
+                    }
                 } catch (error) {
                     console.error("Erreur lors de l'ajout du projet :", error);
                 }
@@ -217,13 +220,16 @@ async function deleteProject(event,token) {
     const figureElementsToRemove = document.querySelectorAll("."+classId);
     const id = parseInt(classId.substring(2));
     try {
-        await fetch(`http://localhost:5678/api/works/${id}`, {
+        const response = await fetch(`http://localhost:5678/api/works/${id}`, {
         method: "DELETE",
         headers: {
             "Authorization": `Bearer ${token}`,
             "Content-Type": "application/json"
         }
         });
+        if (!response.ok) {
+            throw new Error("Erreur lors de la suppression du projet");
+        }
         figureElementsToRemove.forEach((figureElement) => {
         figureElement.remove();
         });
