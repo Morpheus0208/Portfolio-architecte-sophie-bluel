@@ -1,3 +1,8 @@
+
+if (localStorage.getItem("token")) {
+   window.location.href = "index.html";
+}
+
 /**
  * gère l'affichage et les interactions de la page login
  */
