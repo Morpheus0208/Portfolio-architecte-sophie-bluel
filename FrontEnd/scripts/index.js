@@ -307,7 +307,7 @@ function checkFormValidity() {
         const buttonValider = document.querySelector("#addProjectValider");
         buttonValider.disabled = true; // Désactive le bouton
         buttonValider.classList.remove("projetOk");
-        buttonValider.classList.add("projetKo");// Activer le bouton de validation 
+        buttonValider.classList.add("projetKo");// Desactiver le bouton de validation 
         console.log("Formulaire invalide, bouton désactivé");
         return false;
     }
